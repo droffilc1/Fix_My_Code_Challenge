@@ -15,11 +15,11 @@ class Square:
 
     def area_of_my_square(self):
         """ Area of the square """
-        return self.width * self.height
+        return self.width * self.width
 
     def perimiter_of_my_square(self):
         """ Perimeter of the square """
-        return 4 * self.width
+        return (self.width * 2) + (self.height * 2)
 
     def __str__(self):
         """ Print the square """
