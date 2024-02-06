@@ -4,13 +4,48 @@
 
 class Square():
     """Square class"""
-    width = 0
-    height = 0
+    __width = 0
+    __height = 0
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, width=0, height=0):
         """ Initialize data  """
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+        self.width = width
+        self.height = height
+
+        if self.height != self.width:
+            self.height = self.width
+        if self.width != self.height:
+            self.width = self.height
+
+    @property
+    def width(self):
+        """Getter method for width
+        Setter method for width
+        """
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
+
+    @property
+    def height(self):
+        """Getter method for height
+        Setter method for height
+        """
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
 
     def area_of_my_square(self):
         """ Area of the square """
@@ -26,7 +61,7 @@ class Square():
 
 
 if __name__ == "__main__":
-    """Create a square object"""
+
     s = Square(width=12, height=9)
     print(s)
     print(s.area_of_my_square())
