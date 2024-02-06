@@ -9,13 +9,13 @@ class Square():
 
     def __init__(self, width=0, height=0):
         """ Initialize data  """
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
 
-        if self.height != self.width:
-            self.height = self.width
-        if self.width != self.height:
-            self.width = self.height
+        if self.__height != self.__width:
+            self.__height = self.__width
+        if self.__width != self.__height:
+            self.__width = self.__height
 
     @property
     def width(self):
@@ -49,20 +49,20 @@ class Square():
 
     def area_of_my_square(self):
         """ Area of the square """
-        return self.width * self.height
+        return self.__width * self.__height
 
     def perimiter_of_my_square(self):
         """ Perimeter of the square """
-        return (self.width * 2) + (self.height * 2)
+        return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
         """ Print the square """
-        return "{}/{}".format(self.width, self.height)
+        return "{}/{}".format(self.__width, self.__height)
 
 
 if __name__ == "__main__":
 
-    s = Square(width=12, height=9)
+    s = Square(width=9, height=9)
     print(s)
     print(s.area_of_my_square())
     print(s.perimiter_of_my_square())
