@@ -2,7 +2,7 @@
 """square.py"""
 
 
-class Square():
+class Square:
     """Square class"""
 
     width = 0
