@@ -12,10 +12,10 @@ class Square():
         self.__width = width
         self.__height = height
 
+        """ Make the square a perfect square """
         if self.__height != self.__width:
             self.__height = self.__width
-        if self.__width != self.__height:
-            self.__width = self.__height
+
 
     @property
     def width(self):
@@ -57,12 +57,12 @@ class Square():
 
     def __str__(self):
         """ Print the square """
-        return "{}/{}".format(self.__width, self.__height)
+        return "{}".format(self.__width)
 
 
 if __name__ == "__main__":
 
-    s = Square(width=9, height=9)
+    s = Square(width=12, height=9)
     print(s)
     print(s.area_of_my_square())
     print(s.perimiter_of_my_square())
